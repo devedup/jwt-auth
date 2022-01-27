@@ -27,6 +27,12 @@ class Expiration extends Claim
      */
     public function validatePayload()
     {
+    
+//        if ($this->isPast($this->getValue())) {
+//            $date = date(DATE_RFC2822, $this->getValue());
+//            \Log::debug("This token would actually be expired {$date}");
+//        }
+    
 //        \Log::debug("Checking the date");
 //        \Log::debug("the value is {$this->getValue()}");
         $pastWithDaysAdded = $this->getValue() + 2592000; // 2592000 is 30 days in seconds
